@@ -2,17 +2,7 @@ import os
 from PIL import Image
 
 def compress_image(input_path, output_path, quality=85):
-    """
-    Compress an image with a target file size.
-
-    Parameters:
-    - input_path (str): Path to the input image file.
-    - output_path (str): Path to save the compressed image.
-    - quality (int): The quality of the compressed image (0-100), where 100 is the highest quality.
-
-    Returns:
-    None
-    """
+    
     try:
         # Open the image
         with Image.open(input_path) as img:
@@ -23,17 +13,7 @@ def compress_image(input_path, output_path, quality=85):
         print(f"Error: {e}")
 
 def compress_folder_images(input_folder, output_folder, quality=85):
-    """
-    Compress all images in a folder and save them in another folder.
-
-    Parameters:
-    - input_folder (str): Path to the input folder containing images.
-    - output_folder (str): Path to the output folder to save compressed images.
-    - quality (int): The quality of the compressed images (0-100), where 100 is the highest quality.
-
-    Returns:
-    None
-    """
+   
     try:
         # Create output folder if it doesn't exist
         os.makedirs(output_folder, exist_ok=True)
